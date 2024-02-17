@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+images:
+  - name: nginx  # 이 이미지 이름은 Deployment의 이미지 이름과 일치해야 합니다.
+    newName: nginx
+    newTag: dev  # 개발 환경에 맞는 이미지 태그로 변경
+
+patchesStrategicMerge:
+  - patch_deployment.yaml
+
