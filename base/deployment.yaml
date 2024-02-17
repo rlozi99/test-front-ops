@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: eunji-test
+  name: eunji-test-front
   namespace: eunjitest
 spec:
   replicas: 2
   revisionHistoryLimit: 0
   selector:
     matchLabels:
-      app: eunji-test
+      app: eunji-front
   template:
     metadata:
       labels:
-        app: eunji-test
+        app: eunji-front
     spec:
       containers:
-      - name: nginx-container
-        image: nginx:latest
+      - name: eunjitest-front-container
+        image: goodbirdacr.azurecr.io/eunjitest_image/front:latest
         ports:
         - containerPort: 80
