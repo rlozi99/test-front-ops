@@ -6,6 +6,6 @@ resources:
 - service.yaml
 
 images:
-- name: nginx
-  newName: nginx
+- name: goodbirdacr.azurecr.io/eunjitest_image/front
+  newName: goodbirdacr.azurecr.io/eunjitest_image/front
   newTag: latest
