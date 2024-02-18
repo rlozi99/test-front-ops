@@ -19,3 +19,8 @@ spec:
         image: goodbirdacr.azurecr.io/eunjitest_image/front:latest
         ports:
         - containerPort: 80
+        resources:
+          limits:
+            memory: "512Mi"
+          requests:
+            memory: "256Mi"
