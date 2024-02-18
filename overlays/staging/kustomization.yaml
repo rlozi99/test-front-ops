@@ -2,16 +2,18 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - ../../base
+- ../../base
 
 images:
-  - name: goodbirdacr.azurecr.io/eunjitest_image/front
-    newTag: dev
+- name: eunjitest_image/front
+  newTag: stg.3
+- name: goodbirdacr.azurecr.io/eunjitest_image/front
+  newTag: dev
 
 patches:
-  - path: patch_deployment.yaml
-    target:
-      group: apps
-      version: v1
-      kind: Deployment
-      name: eunji-test-front
+- path: patch_deployment.yaml
+  target:
+    group: apps
+    kind: Deployment
+    name: eunji-test-front
+    version: v1
