@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eunji-test-front
+  namespace: eunjitest
+spec:
+  template:
+    spec:
+      containers:
+      - name: eunjitest-front-container
+        image: goodbirdacr.azurecr.io/eunjitest_image/front:dev
+        resources:
+          limits:
+            memory: "256Mi"
+          requests:
+            memory: "128Mi"

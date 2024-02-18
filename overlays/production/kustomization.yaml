@@ -4,12 +4,6 @@ kind: Kustomization
 resources:
   - ../../base
 
-configMapGenerator:
-- name: app-config
-  literals:
-    - ENV=development
-    - DEBUG=true
-
 images:
   - name: goodbirdacr.azurecr.io/eunjitest_image/front
     newTag: dev
@@ -21,4 +15,3 @@ patches:
       version: v1
       kind: Deployment
       name: eunji-test-front
-      namespace: eunjitest
