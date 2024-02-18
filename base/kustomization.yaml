@@ -5,7 +5,7 @@ resources:
 - deployment.yaml
 - service.yaml
 
-images:
-- name: goodbirdacr.azurecr.io/eunjitest_image/front
-  newName: goodbirdacr.azurecr.io/eunjitest_image/front
-  newTag: latest
+# images:
+# - name: goodbirdacr.azurecr.io/eunjitest_image/front
+#   newName: goodbirdacr.azurecr.io/eunjitest_image/front
+#   newTag: latest
