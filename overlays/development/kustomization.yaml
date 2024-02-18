@@ -12,7 +12,7 @@ configMapGenerator:
 
 images:
 - name: eunjitest_image/front
-  newTag: dev.15
+  newTag: dev.16
 - name: goodbirdacr.azurecr.io/eunjitest_image/front
   newTag: dev
 
