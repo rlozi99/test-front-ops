@@ -2,23 +2,25 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - ../../base
+- ../../base
 
 configMapGenerator:
-- name: app-config
-  literals:
-    - ENV=development
-    - DEBUG=true
+- literals:
+  - ENV=development
+  - DEBUG=true
+  name: app-config
 
 images:
-  - name: goodbirdacr.azurecr.io/eunjitest_image/front
-    newTag: dev
+- name: eunjitest_image/front
+  newTag: dev.14
+- name: goodbirdacr.azurecr.io/eunjitest_image/front
+  newTag: dev
 
 patches:
-  - path: patch_deployment.yaml
-    target:
-      group: apps
-      version: v1
-      kind: Deployment
-      name: eunji-test-front
-      namespace: eunjitest
+- path: patch_deployment.yaml
+  target:
+    group: apps
+    kind: Deployment
+    name: eunji-test-front
+    namespace: eunjitest
+    version: v1
